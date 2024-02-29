@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backendbluedeployment
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: node-Backend-app
+      version: v1
+      color: blue
+  template:
+    metadata:
+      name: node-Backend-app
+      labels:
+        app: node-Backend-app
+        version: v1
+        color: blue
+    spec:
+      containers:
+      - name: nodeappcontainer
+        image: dockerdocker2023/JENKINS-NODEJS-BACKEND
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+...
