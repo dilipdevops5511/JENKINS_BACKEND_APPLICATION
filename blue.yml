@@ -21,7 +21,7 @@ spec:
         color: blue
     spec:
       containers:
-      - name: nodeappcontainer
+      - name: nodeappcontainers
         image: dockerdocker2023/backendjenkinss
         imagePullPolicy: Always
         ports:
