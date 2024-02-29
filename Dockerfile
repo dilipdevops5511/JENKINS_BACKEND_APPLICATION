@@ -13,5 +13,5 @@ RUN npm install --unsafe-perm=true --allow-root
 # Copy the rest of the application code
 COPY . .
 
-# Specify the command to run your application
-CMD ["npm", "run", "dev"]
+# Specify the command to run your application using nodemon directly
+CMD ["node_modules/.bin/nodemon", "app.js"]
