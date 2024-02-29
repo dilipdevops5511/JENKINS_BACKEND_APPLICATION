@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: nodeappcontainer
-        image: dockerdocker2023/backendjenkins
+        image: dockerdocker2023/backendjenkinss
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
