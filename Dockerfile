@@ -1,17 +1,19 @@
-# Use an official Node.js runtime as the base image
-FROM node:18
+FROM node:14.15.1
 
-# Set the working directory in the container
+# Create app directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json to the container
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
 COPY package*.json ./
 
-# Install application dependencies
 RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
-# Copy the rest of the application code
+# Bundle app source
 COPY . .
 
-# Specify the command to run your application using nodemon directly
-CMD ["./node_modules/.bin/nodemon", "index.js"]
+EXPOSE 8080
+CMD [ "node", "index.js" ]
