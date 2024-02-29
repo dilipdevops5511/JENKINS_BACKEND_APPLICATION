@@ -23,7 +23,7 @@ app.use(cors());
 
 app.get('/', (request, response) => {
   console.log(request);
-  return response.status(234).send('[+] BACKEND DEPLOYED SUCCESSFULLY');
+  return response.status(234).send('[+] BACKEND DEPLOYED SUCCESSFULLY :)');
 });
 
 app.use('/books', booksRoute);
