@@ -25,5 +25,5 @@ spec:
         image: dockerdocker2023/backendjenkinsss
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 5555
 ...

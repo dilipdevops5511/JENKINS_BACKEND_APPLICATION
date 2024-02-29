@@ -8,6 +8,6 @@ spec:
   selector:
     version: v1
   ports:
-  - port: 80
-    targetPort: 8080
+  - port: 5555
+    targetPort: 5555
 ...
