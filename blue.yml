@@ -1,12 +1,22 @@
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: javawebappliveservice
+spec:
+  type: LoadBalancer
+  selector:
+    version: v1
+  ports:
+  - port: 5555
+    targetPort: 5555
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backendbluedeployment
 spec:
   replicas: 2
-  strategy:
-    type: RollingUpdate
   selector:
     matchLabels:
       app: node-Backend-app
@@ -26,4 +36,3 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 5555
-...
